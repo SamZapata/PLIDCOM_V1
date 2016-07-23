@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% block title %}REGISTRO DE HABITANTES{% endblock title %}
+
+{% block content %}
+<div class="row">
+        <div class="col-md-6 col-sm-offset-3">
+            <div class="page-header">
+                <h2>Registro de Usuarios</h2>
+            </div>
+
+    </div>
+        <form method="post" action="" enctype="multipart/form-data">
+        <h1>REGISTRO DE UN HABITANTE NUEVO</h1>
+        <table width="900">
+        <tr><td><strong>Username:</strong> {{form.username}}
+        <strong> Email:</strong> {{form.usrForm_email}}</td></tr>
+
+        <tr><td><strong>Nombres:</strong> {{form.usrForm_nombres}}
+        <strong> Apellidos:</strong> {{form.usrForm_apellidos}}</td></tr>
+
+        <tr><td><strong>Password:</strong> {{form.usrForm_password}}
+        <strong>Confirmar Password:</strong> {{form.usrForm_password2}}</td></tr>
+        <tr><td><strong>Foto:</strong> {{form.usrForm_photo}}</td></tr>
+        </table>
+
+
+                {%csrf_token%}
+                {{forms.as_p}}
+                <button type="submit" class="btn btn-primary">Registrar</button>
+
+        </form>
+
+    </div>
+
+{% endblock content %}
